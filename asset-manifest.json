@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/scandi-task/static/css/main.344786ab.css",
+    "main.js": "/scandi-task/static/js/main.3a32861c.js",
+    "index.html": "/scandi-task/index.html",
+    "main.344786ab.css.map": "/scandi-task/static/css/main.344786ab.css.map",
+    "main.3a32861c.js.map": "/scandi-task/static/js/main.3a32861c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.344786ab.css",
+    "static/js/main.3a32861c.js"
+  ]
+}

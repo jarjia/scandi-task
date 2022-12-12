@@ -52,7 +52,7 @@ const AddPage = ({handleProducts, products}) => {
   return (
     <form className='add-page' id='product_form' onSubmit={handleSubmit}>
       <div className='product-div-1'>
-        <h1 className='product-div-list'>Product List</h1>
+        <h1 className='product-div-list'>Product Add</h1>
         <div>
           <button type='submit' className='add'>Save</button>
           <button type='button' className='delete' onClick={() => navigate('/')}>Cancel</button>

@@ -2,21 +2,16 @@ import React from 'react'
 import SingleProduct from './SingleProduct'
 import { useNavigate } from 'react-router-dom'
 
-const Product = ({products, handleDelete}) => {
-  const [isSubscribed, setIsSubscribed] = React.useState(false);
+const Product = ({products, handleDelete, isSubscribed, handleChange}) => {
   const navigate = useNavigate()
-
-  const handleChange = () => {
-    setIsSubscribed(prev => !prev)
-  };
 
   return (
     <>
       <div className='product-div-1'>
         <h1 className='product-div-list'>Product List</h1>
         <div>
-          <button className='add' onClick={() => navigate('/add')}>Add</button>
-          <button className='delete' id='delete-product-btn' onClick={handleDelete}>MASS DELETE</button>
+          <button type='button' className='add' onClick={() => navigate('/add')}>ADD</button>
+          <button type='button' className='delete' id='delete-product-btn' onClick={handleDelete}>MASS DELETE</button>
         </div>
       </div>
       <div className='product-div'>

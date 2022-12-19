@@ -73,7 +73,7 @@ body {
     text-align: center;
     font-weight: 200;
     border-top: 2px solid rgb(27, 27, 27);
-    margin: auto 0 !important
+    margin: auto 35px !important
 }
 .product-list-div {
     display: flex; 

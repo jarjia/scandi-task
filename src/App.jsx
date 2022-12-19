@@ -8,20 +8,20 @@ function App() {
   const [products, setProducts] = useState([])
   const [isSubscribed, setIsSubscribed] = useState(false);
 
-  const handleChange = () => {
-    setIsSubscribed(prev => !prev)
-  };
-
   useEffect(() => {
     const savedProducts = JSON.parse(localStorage.getItem('my-products'));
     if (savedProducts) {
-     setProducts(savedProducts);
+      setProducts(savedProducts);
     }
   }, []);
 
   useEffect(() => { 
     localStorage.setItem('my-products', JSON.stringify(products))
   }, [products])
+
+  const handleChange = () => {
+    setIsSubscribed(prev => !prev)
+  };
 
   const handleProducts = (data) => {
     setProducts(prev => {
@@ -34,15 +34,21 @@ function App() {
   }
 
   const handleDelete = () => {
-    console.log(products);
     setProducts(prev => prev.filter(item => item.isMarked !== true))
+  }
+
+  const handleCheckBoxes = () => {
+    setProducts(prev =>  prev.map(item => {
+      item.isMarked = false
+      return item
+    }))
   }
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Product isSubscribed={isSubscribed} handleChange={handleChange} products={products} handleDelete={handleDelete}/>}/>
-        <Route path='/add' element={<AddPage products={products} handleProducts={handleProducts}/>}/>
+        <Route path='/add' element={<AddPage handleCheckBoxes={handleCheckBoxes} products={products} handleProducts={handleProducts}/>}/>
       </Routes>
     </BrowserRouter>
   );

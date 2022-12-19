@@ -17,15 +17,15 @@ const Product = ({products, handleDelete, isSubscribed, handleChange}) => {
       <div className='product-div'>
           <div className='product-list-div'>
             <div className='list'>
-            {products.map(item => {
+            {products && products.map(item => {
               return <SingleProduct key={item.sku} isSubscribed={isSubscribed} handleChange={handleChange} item={item}/>
             })}
             </div>
           </div>
       </div>
       <div className='footer'>
-            <h4>Scandiweb Test assignment</h4>
-          </div>
+        <h4>Scandiweb Test assignment</h4>
+      </div>
     </>
   )
 }

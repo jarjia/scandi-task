@@ -9,7 +9,7 @@ const initialInp = {
   weight: ''
 }
 
-const AddPage = ({handleProducts, products}) => {
+const AddPage = ({handleProducts, handleCheckBoxes, products}) => {
   const [sku, setSku] = useState('')
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
@@ -30,9 +30,12 @@ const AddPage = ({handleProducts, products}) => {
     }
   }, [sku])
 
+  useEffect(() => {
+    handleCheckBoxes()
+  }, [])
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(sameSku);
     sameSku === false && handleProducts({
       sku: sku,
       name: name,
